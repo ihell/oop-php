@@ -25,6 +25,13 @@ class produk {
    }
 }
 
+class CetakInfoProduk {
+        public function cetak( produk $produk ) {
+                $str = "{$produk->nama} | {$produk->asal} {$produk->pembuatKarakter} (Rp. {$produk->harga})";
+                return $str;
+        }
+}
+
 $produk1 = new produk("Ruka Sarashina", "Rent A Girlfriend", "Reiji Miyamija", "50000");
 $produk2 = new produk("Chizuru Mizuhara", "Rent A Girlfriend", "Reiji Miyamija", "50000");
 
@@ -35,4 +42,8 @@ echo "<br>";
 echo "Figure : " . $produk1->getLabel();
 echo "<hr>";
 echo "Keychain : " . $produk2->getLabel();
+echo "<hr>";
+
+$infoProduk1 = new CetakInfoProduk();
+echo $infoProduk1->cetak($produk1);
 ?>
